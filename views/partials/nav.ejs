@@ -1,0 +1,30 @@
+<nav class="uk-navbar-container" uk-navbar>
+  <div class="uk-navbar-left">
+    <ul class="uk-navbar-nav">
+      <li class="uk-active"><a href="/"><strong>Realtime Twitter</strong></a></li>
+    </ul>
+  </div>
+  <div class="uk-navbar-right">
+    <ul class="uk-navbar-nav">
+      <% if (user) { %>
+      <li class="uk-active">
+        <a href="#"><img src="<%= user.picture %>" style="height: 40px; width: 40px; border-radius: 50%"></a>
+        <div class="uk-navbar-dropdown">
+          <ul class="uk-nav uk-navbar-dropdown-nav">
+            <li><a href="/logout"><span class="uk-margin-small-right uk-icon" uk-icon="sign-out"></span>Logout</a></li>
+          </ul>
+        </div>
+      </li>
+      <% } else { %>
+      <li>
+        <div>
+          <div class="uk-button-group" style="padding-top: 8px;">
+            <a href="/login" class="uk-button uk-button-primary">login</a>
+            <a href="/register" class="uk-button uk-button-secondary">register</a>
+          </div>
+        </div>
+      </li>
+      <% } %>
+    </ul>
+  </div>
+</nav>

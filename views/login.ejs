@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<% include ./partials/head %>
+
+<body style="font-family: Varela Round">
+<br>
+<br>
+
+  <div class="uk-container" style="max-width: 600px;">
+    <p>Log in to Twitter</p>
+    <form class="uk-form-controls" action="/login" method="post">
+
+     <% include ./partials/messages %>
+
+      <div class="uk-margin">
+        <div class="uk-inline uk-width-1-1">
+          <span class="uk-form-icon" uk-icon="icon: user"></span>
+          <input class="uk-input" type="text" name="username">
+        </div>
+      </div>
+
+      <div class="uk-margin">
+        <div class="uk-inline uk-width-1-1">
+          <span class="uk-form-icon" uk-icon="icon: lock"></span>
+          <input class="uk-input" type="text" name="password">
+        </div>
+      </div>
+
+       <input class="uk-input submit-btn" type="submit" name="" value="login" style="background: #32d296; color: #eee">
+
+    </form>
+    <p><small>or</small></p>
+    <a class="uk-button uk-button-primary" href="/register">create new account</a>
+  </div>
+
+  <% include ./partials/scripts %>
+</body>
+</html>

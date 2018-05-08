@@ -1,0 +1,13 @@
+html, body {
+  height: 100%;
+  font-family: "Varela Round";
+  background-color: #eee;
+}
+
+nav {
+  margin-bottom: 15px;
+}
+
+.uk-card {
+  margin-bottom: 15px;
+}

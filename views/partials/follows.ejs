@@ -1,0 +1,14 @@
+<% follows.forEach(function(user){ %>
+<div id="body" class="uk-card uk-card-default uk-width-1-2@m">
+  <div class="uk-card-header" style="padding-left: 10px">
+    <div class="uk-grid-small uk-flex-middle" uk-grid>
+      <div class="uk-width-auto">
+        <a href="/user/<%= user._id %>"><img class="uk-border-circle" width="45" height="45" src='<%= user.picture %>'></a>
+      </div>
+      <div class="uk-width-expand">
+        <p class="uk-card-title uk-margin-remove-bottom"><%= user.username %></p>
+      </div>
+    </div>
+  </div>
+</div>
+<% }); %>

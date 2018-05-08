@@ -1,0 +1,18 @@
+<% if (tweets.length === 0) {%>
+
+<% } else {%>
+<% tweets.forEach(function(tweet){ %>
+<div class="uk-card-header" style="padding-left: 10px">
+  <div class="uk-grid-small uk-flex-middle" uk-grid>
+    <div class="uk-width-auto">
+      <a href="/user/<%= tweet.owner._id %>"><img class="uk-border-circle" width="45" height="45" src='<%= tweet.owner.picture %>'></a>
+    </div>
+    <div class="uk-width-expand">
+      <p class="uk-card-title uk-margin-remove-bottom"><%= tweet.owner.username %></p>
+      <p class="uk-text-meta uk-margin-remove-top"><%= tweet.content %></p>
+    </div>
+  </div>
+</div>
+<% }); %>
+</div>
+<% } %>

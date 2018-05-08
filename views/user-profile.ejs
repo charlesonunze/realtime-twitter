@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <% include ./partials/head %>
+  <body>
+    <% include ./partials/nav %>
+    <div class="uk-container" style="max-width: 600px;">
+      <div class="" style="text-align: center;">
+        <img class="uk-border-circle" width="105" height="105" src='<%= tweets[0].owner.picture %>'>
+        <br>
+        <p><%= tweets[0].owner.username %></p>
+        <% if(user.username === tweets[0].owner.username){ %>
+        <% } else{ %>  
+        <% if(following) { %>
+        <button class="uk-button uk-button-primary" type="submit" id="unfollow">
+        following</button>
+        <% } else { %>  
+        <button class="uk-button uk-button-secondary" type="submit" id="follow">
+        follow</button>
+        <% } %>
+        <% } %>
+      </div>
+      <br>
+      <div class="uk-position-center" id="loading" style="margin-top: 30px;">
+        <div uk-spinner></div>
+      </div>
+      <div class="uk-margin-medium-top">
+        <ul class="uk-flex-center" uk-tab>
+          <li class="uk-active"><a href="#">Tweets</a></li>
+          <li><a href="#">Following</a></li>
+          <li><a href="#">Followers</a></li>
+        </ul>
+        <br>
+        <input id="input" type="hidden" name="" value="<%= tweets[0].owner._id %>">
+        <ul id="my-id" class="uk-switcher">
+          <li>
+            <% include ./partials/user-tweets %>
+          </li>
+          <li>
+            <% include ./partials/follows %>           
+          </li>
+          <li>
+            <% include ./partials/followers %> 
+          </li>
+        </ul>
+      </div>
+      <br>
+    </div>
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script src="/js/index.js"></script>
+    <script src="/js/follow.js"></script>
+    <script src="/js/unfollow.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <% include ./partials/scripts %>
+  </body>
+</html>

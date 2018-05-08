@@ -1,0 +1,18 @@
+<% if (success.length > 0) { %>
+<div class="uk-alert-success" uk-alert>
+  <a class="uk-alert-close" uk-close></a>
+  <p><%= success %></p>
+</div>
+<% } %>
+<% if (message.length > 0) { %>
+<div class="uk-alert-info" uk-alert>
+  <a class="uk-alert-close" uk-close></a>
+  <p><%= message %></p>
+</div>
+<% } %>
+<% if (error.length > 0) { %>
+<div class="uk-alert-danger" uk-alert>
+  <a class="uk-alert-close" uk-close></a>
+  <p><%= error %></p>
+</div>
+<% } %>

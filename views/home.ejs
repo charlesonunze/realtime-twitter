@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <% include ./partials/head %>
+  <body>
+    <% include ./partials/nav %>
+    <div class="uk-container" style="max-width: 600px;">
+      <form id="form" class="uk-form-controls" action="/login" method="post">
+        <div class="uk-margin">
+          <div class="uk-inline uk-width-1-1">
+            <input class="uk-input" type="text" name="tweet">
+          </div>
+        </div>
+        <input class="uk-button uk-button-primary" type="submit" name="" value="tweet">
+      </form>
+      <div class="uk-position-center" id="loading">
+        <div uk-spinner></div>
+      </div>
+      <br>
+      <br>    
+      <br>
+      <p>Recent Tweets...</p>
+      <div id="body" class="uk-card uk-card-default uk-width-1-2@m">
+        <% include ./partials/tweets %>
+      </div>
+    </div>
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script src="/js/index.js"></script>
+    <% include ./partials/scripts %>
+  </body>
+</html>
